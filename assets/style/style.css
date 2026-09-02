@@ -1,7 +1,33 @@
 *{
     margin: 0;
-    padding: auto;
+    padding: 0;
 }
 .sub-logo {
     color: red;
 }
+
+.nav-link:hover{
+    border-bottom: 2px solid red;
+    
+}
+
+.nav-link:active{
+    font-size: 20px;
+}
+
+h2 + ul > li {
+    list-style-type: square;
+}
+
+table{
+    border: 1px solid black;
+    
+}
+
+table th , table td{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+
