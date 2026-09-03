@@ -57,36 +57,36 @@
         <h3>Customer Information</h3>
         <table>
             <tr>
-                <td><label for="fullname" class="required">Full Name:</label></td>
-                <td><input type="text" id="fullname" name="fullname" required></td>
+                <td><label class="form-label" for="fullname" class="required">Full Name:</label></td>
+                <td><input class="form-control" placeholder="Full name" type="text" id="fullname" name="fullname" required></td>
             </tr>
             <tr>
-                <td><label for="email" class="required">Email:</label></td>
-                <td><input type="email" id="email" name="email" required></td>
+                <td><label class="form-label" for="email" class="required">Email:</label></td>
+                <td><input class="form-control" placeholder="abc@gmail.com"  type="email" id="email" name="email" required></td>
             </tr>
             <tr>
-                <td><label for="Password" class="required">Password:</label></td>
-                <td><input type="password" id="Password" name="Password" required></td>
+                <td><label class="form-label" for="Password" class="required">Password:</label></td>
+                <td><input class="form-control" placeholder="Password" type="password" id="Password" name="Password" required></td>
             </tr>
             <tr>
-                <td><label for="phone" class="required">Phone Number:</label></td>
-                <td><input type="tel" id="phone" name="phone" required></td>
+                <td><label class="form-label" for="phone" class="required">Phone Number:</label></td>
+                <td><input class="form-control" placeholder="Phone number" type="tel" id="phone" name="phone" required></td>
             </tr>
         </table>
         <h3>Order Information</h3>
         <table>
             <tr>
-                <td><label for="Quantity" class="required">Quantity:</label></td>
-                <td><input type="number" id="Quantity" name="Quantity" min="1" max="10" required></td>
+                <td><label class="form-label" for="Quantity" class="required">Quantity:</label></td>
+                <td><input class="form-control" placeholder="Quantity" type="number" id="Quantity" name="Quantity" min="1" max="10" required></td>
             </tr>
             <tr>
-                <td><label for="DeliveryDate" class="required">Delivery Date:</label></td>
-                <td><input type="date" id="DeliveryDate" name="DeliveryDate" required></td>
+                <td><label class="form-label" for="DeliveryDate" class="required">Delivery Date:</label></td>
+                <td><input class="form-control" type="date" id="DeliveryDate" name="DeliveryDate" required></td>
             </tr>
             <tr>
-                <td><label for="food" class="required">Selected Food:</label></td>
+                <td><label class="form-label" for="food" class="required">Selected Food:</label></td>
                 <td>
-                    <select id="food" name="food" required>
+                    <select class="form-control" id="food" name="food" required>
                         <option value="">--Please Choose an option--</option>
                         <option value="pizza">Pizza</option>
                         <option value="burger">Burger</option>
@@ -99,18 +99,18 @@
         <h3>Payment Method</h3>
         <table>
             <tr>
-                <td><label for="payment" class="required">Payment Method:</label></td>
+                <td><label class="form-label" for="payment" class="required">Payment Method:</label></td>
                 <td>
                     <!-- cc - credit card -->
-                    <input type="radio" id="creditcard" name="payment" value="cc" required>
-                    <label for="creditcard">Credit Card</label><br>
+                    <input class="form-check-input" type="radio" id="creditcard" name="payment" value="cc" required>
+                    <label class="form-label" for="creditcard">Credit Card</label><br>
                     <!-- dc - debit card -->
 
-                    <input type="radio" id="debitcard" name="payment" value="dc" required>
-                    <label for="debitcard">Debit Card</label><br>
+                    <input class="form-check-input" type="radio" id="debitcard" name="payment" value="dc" required>
+                    <label class="form-label" for="debitcard">Debit Card</label><br>
                     <!-- cash - cash on delivery -->
-                    <input type="radio" id="cash" name="payment" value="cash" required>
-                    <label for="cash">Cash on Delivery</label><br>
+                    <input class="form-check-input" type="radio" id="cash" name="payment" value="cash" required>
+                    <label class="form-label" for="cash">Cash on Delivery</label><br>
 
                 </td>
             </tr>
@@ -119,14 +119,14 @@
         <h3> Extras</h3>
         <table>
             <tr>
-                <td><label for="extras">Extras:</label></td>
+                <td><label class="form-label" for="extras">Extras:</label></td>
                 <td>
-                    <input type="checkbox" id="cheese" name="extras" value="cheese">
-                    <label for="cheese">Extra Cheese</label><br>
-                    <input type="checkbox" id="sauce" name="extras" value="sauce">
-                    <label for="sauce">Extra Sauce</label><br>
-                    <input type="checkbox" id="toppings" name="extras" value="toppings">
-                    <label for="toppings">Extra Toppings</label><br>
+                    <input class="form-check-input" type="checkbox" id="cheese" name="extras" value="cheese">
+                    <label class="form-check-label" for="cheese">Extra Cheese</label><br>
+                    <input class="form-check-input" type="checkbox" id="sauce" name="extras" value="sauce">
+                    <label class="form-check-label" for="sauce">Extra Sauce</label><br>
+                    <input class="form-check-input" type="checkbox" id="toppings" name="extras" value="toppings">
+                    <label class="form-check-label" for="toppings">Extra Toppings</label><br>
                 </td>
             </tr>
 
@@ -134,13 +134,13 @@
         <h3>Delivery Instructions</h3>
         <table>
             <tr>
-                <td><label for="delivery">Delivery Instructions:</label></td>
-                <td><textarea id="delivery" name="delivery" rows="4" cols="50"></textarea></td>
+                <td><label class="form-label" for="delivery">Delivery Instructions:</label></td>
+                <td><textarea class="form-control" id="delivery" name="delivery" rows="4" cols="50"></textarea></td>
             </tr>
         </table>
         <tr>
-            <td><input type="submit" value="Submit form"></td>
-            <td><input type="reset" value="Reset form"></td>
+            <td><input class="btn btn-primary" type="submit" value="Submit form"></td>
+            <td><input class="btn btn-secondary" type="reset" value="Reset form"></td>
         </tr>
 
 
