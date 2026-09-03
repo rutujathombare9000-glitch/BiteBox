@@ -40,4 +40,9 @@ th,td{
     justify-content: center;
 }
 
+.required::before {
+    content: "*";
+    color: red;
+}
+
 
