@@ -3,6 +3,9 @@
 
 <head>
     <title>BiteBox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/37d1147389.js" crossorigin="anonymous"></script>
@@ -13,15 +16,12 @@
 <body>
     <header>
         <div>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+           
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
 
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/biteBox_new.png" alt="Bootstrap" width="90" height="auto">
+                    <img src="assets/images/logo.png" alt="Bootstrap" width="90" height="auto">
                 </a>
-
-
-
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -58,20 +58,23 @@
             </nav>
         </div>
     </header>
-    <!-- Cart Hero Section -->
 
-    <section id="cart-hero">
-        <div class="hero-content">
-            <h2>Your Shopping Cart</h2>
-            <p> Review your selected food items before
-                proceeding to checkout.
-            </p>
-            <hr>
-            <p>Update quantities, remove items, and confirm
-                your order with ease.
-            </p>
-        </div>
-    </section>
+   <section id="cart-hero">
+    <h1>Your Shopping Cart</h1>
+    <div class="divider">
+        <hr>
+        <img src="assets/images/fork-and-spoon.png" alt="Fork and Spoon">
+        <hr>
+
+    </div>
+    <p> Review your selected food items before proceeding to checkout.
+        <br>
+        Update quantities, remove items, and confirm your order with ease.
+    </p>
+</section>
+
+
+
     <section id="shopping-cart">
         <table>
             <thead>
@@ -88,7 +91,7 @@
                 <!-- Item 1 -->
                 <tr>
                     <td>
-                        <img src="assets/images/margherita.jpg" alt="Margherita Pizza" width="80">
+                        <img src="assets/images/margreta_pizza.jpg" alt="Margherita Pizza" width="80">
                         <h3>Margherita Pizza</h3>
                         <p>Classic delight with fresh cheese & basil.</p>
                     </td>
@@ -100,7 +103,7 @@
                     </td>
                     <td>₹249</td>
                     <td>
-                        <a href="#"> <img src="assets/images/delete.png" width="20"> </a>
+                        <a href="#"> <img src="assets/icons/delete.png" width="20"> </a>
                     </td>
                 </tr>
 
@@ -120,7 +123,7 @@
                     </td>
                     <td>₹378</td>
                     <td>
-                        <a href="#"> <img src="assets/images/delete.png" width="20"></a>
+                        <a href="#"> <img src="assets/icons/delete.png" width="20"></a>
                     </td>
                 </tr>
                 <!-- Item 3 -->
@@ -136,10 +139,12 @@
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
+                        
                     </td>
                     <td>₹199</td>
                     <td>
-                        <a href="#"> <img src="assets/images/delete.png" width="20"> </a>
+                        <a href="#"> <img src="assets/icons/delete.png" width="20"> </a>
+                        
                     </td>
                 </tr>
 
@@ -161,7 +166,7 @@
         <h3> <span>Total Amount</span> <span>₹886.00</span> </h3>
 
         <button type="button"> Proceed to Checkout </button>
-        <p> <img src="assets/images/shieldlock.png" width="20" height="18">
+        <p> <img src="assets/icons/shield.png" width="20" height="18">
             Secure Checkout </p>
     </aside>
     <!-- Cart Action Buttons -->
@@ -169,13 +174,13 @@
     <section id="cart-actions">
 
         <a href="menu.html">
-            <img src="assets/images/left-arrow-1.png" width="20" height="18">
+            <img src="assets/icons/left-arrow.png" width="20" height="18">
             Continue Shopping
         </a>
 
         <button type="button">
 
-            <img src="assets/images/delete.png" width="18" height="18">
+            <img src="assets/icons/delete.png" width="18" height="18">
 
         </button>
 
@@ -199,25 +204,25 @@
         <!-- Footer Logo Section -->
         <div class="container-fluid">
             <section>
-                <img src="assets/images/biteBox_new.png" alt="BiteBox Logo" width="180">
+                <img src="assets/images/logo.png" alt="BiteBox Logo" width="180">
                 <p> Delicious food delivered to your doorstep.
                     Fresh, fast and tasty!
                 </p>
 
                 <a>
-                    <img src="assets/images/facebook.jpg" width="25" height="auto">
+                    <img src="assets/icons/facebook.png" width="25" height="auto">
                 </a>
 
                 <a>
-                    <img src="assets/images/instagram.png" width="25" height="auto">
+                    <img src="assets/icons/instagram.png" width="25" height="auto">
                 </a>
 
                 <a>
-                    <img src="assets/images/twitter.png" width="25" height="auto">
+                    <img src="assets/icons/twitter.png" width="25" height="auto">
                 </a>
 
                 <a>
-                    <img src="assets/images/youtube.png" width="25" height="auto">
+                    <img src="assets/icons/youtube.png" width="25" height="auto">
                 </a>
             </section>
             <hr>
@@ -264,8 +269,8 @@
                     <h3>Payment Methods</h3>
                     <img src="assets/images/visa.png" alt="Visa" width="50" height="auto">
                     <img src="assets/images/mastercard.png" alt="Mastercard" width="50" height="auto">
-                    <img src="assets/images/upi-ar21.jpg" alt="UPI" width="60" height="auto">
-                    <img src="assets/images/paytm.jpg" alt="Paytm" width="60" height="auto">
+                    <img src="assets/images/upi.png" alt="UPI" width="60" height="auto">
+                    <img src="assets/images/paytm.png" alt="Paytm" width="60" height="auto">
                 </section>
         </div>
 

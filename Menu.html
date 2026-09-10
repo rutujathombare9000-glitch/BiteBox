@@ -3,6 +3,10 @@
 
 <head>
     <title>BiteBox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/37d1147389.js" crossorigin="anonymous"></script>
@@ -14,45 +18,43 @@
 <body>
     <header>
         <div>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            
-                               
-        <a class="navbar-brand" href="index.html">
-                        <img src="assets/images/biteBox_new.png" alt="Bootstrap" width="90" height="auto">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Menu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="bitedeals.html">Bite Deals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="about.html">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="cart.html"><i
-                                        class="fa-solid fa-cart-shopping"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="login.html"><i
-                                        class="fa-solid fa-right-to-bracket"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.png" alt="Bootstrap" width="90" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="bitedeals.html">Bite Deals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="cart.html"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="login.html"><i
+                                    class="fa-solid fa-right-to-bracket"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
             </nav>
         </div>
     </header>
@@ -70,29 +72,24 @@
         <section id="categories">
             <h2>Browse Categories</h2>
 
-            <div <article>
-                <img src="assets/images/pizza.png" alt="Pizza" width="120" height="120">
+            <div>
+                <img src="assets/icons/pizza-icon.png" alt="Pizza" width="120" height="120">
                 <h3>Pizza</h3>
                 </article>
 
                 <article>
-                    <img src="assets/images/burger.png" alt="Burger" width="120" height="120">
+                    <img src="assets/icons/burger-icon.png" alt="Burger" width="120" height="120">
                     <h3>Burger</h3>
                 </article>
 
                 <article>
-                    <img src="assets/images/pasta.png" width="120" height="120">
+                    <img src="assets/icons/pasta-icon.png" width="120" height="120">
                     <h3>Pasta</h3>
                 </article>
 
                 <article>
-                    <img src="assets/images/biryani.jpg" width="120" height="120">
+                    <img src="assets/icons/biryani-icon.png" width="120" height="120">
                     <h3>Biryani</h3>
-                </article>
-
-                <article>
-                    <img src="assets/images/dessert.jpg" alt="Desserts" width="120" height="120">
-                    <h3>Desserts</h3>
                 </article>
             </div>
         </section>
@@ -101,7 +98,7 @@
             <div>
                 <!-- Menu Item 1 -->
                 <article>
-                    <img src="assets/images/margherita.jpg" width="220">
+                    <img src="assets/images/margherita-pizza.png" width="220">
                     <h3>Margherita Pizza</h3>
                     <p> ⭐⭐⭐⭐⭐ <small>(120)</small> </p>
                     <p> <strong>₹249</strong></p>
@@ -110,18 +107,18 @@
 
                 <!-- Menu Item 2 -->
                 <article>
-                    <img src="assets/images/cheese-burger.jpg" width="220">
+                    <img src="assets/images/cheese-burger.png" width="220">
                     <h3>Cheese Burger</h3>
                     <p>⭐⭐⭐⭐⭐<small>(98)</small></p>
                     <p> <strong> ₹199 </strong> </p>
-                    
+
                     <button> Add to Cart </button>
                 </article>
 
 
                 <!-- Menu Item 3 -->
                 <article>
-                    <img src="assets/images/Alfredo-pasta.jpg" width="220">
+                    <img src="assets/images/alfredo-pasta.png" width="220">
                     <h3>Creamy Alfredo Pasta</h3>
                     <p>⭐⭐⭐⭐⭐ <small> (85) </small>
                     </p>
@@ -132,16 +129,16 @@
 
                 <!-- Menu Item 4 -->
                 <article>
-                    <img src="assets/images/chicken_biryani.png" width="220">
+                    <img src="assets/images/chicken-biryani.png" width="220">
                     <h3>Chicken Biryani</h3>
                     <p> ⭐⭐⭐⭐⭐ <small>(110)</small> </p>
                     <p> <strong>₹279</strong> </p>
                     <button> Add to Cart </button>
                 </article>
-                
+
                 <!-- Menu Item 5 -->
                 <article>
-                    <img src="assets/images/choco-lava-cake.jpg" width="220">
+                    <img src="assets/icons/cake-icon.png" width="220">
                     <h3>Choco Lava Cake</h3>
                     <p> ⭐⭐⭐⭐⭐ <small>(75)</small> </p>
                     <p> <strong>₹149</strong> </p>
@@ -151,7 +148,7 @@
 
                 <!-- Menu Item 6 -->
                 <article>
-                    <img src="assets/images/veg-club-sandwich.jpg" width="220">
+                    <img src="assets/images/veg-club-sandwich.png" width="220">
                     <h3>Veg Club Sandwich</h3>
                     <p>⭐⭐⭐⭐⭐<small>(60)</small> </p>
                     <p> <strong>₹179</strong> </p>
@@ -172,7 +169,7 @@
             </div>
 
             <div class="offer-image">
-                <img src="assets/images/pizzaoff.png" width="150" height="auto">
+                <img src="assets/images/offer-banner.png" width="500" height="auto">
             </div>
         </section>
     </div>
@@ -181,27 +178,23 @@
         <!-- Footer Logo Section -->
         <div class="container-fluid">
             <section>
-            <img src="assets/images/biteBox_new.png" alt="BiteBox Logo" width="180">
-            <p> Delicious food delivered to your doorstep.
-                Fresh, fast and tasty!
-            </p>
-
-            <a>
-                <img src="assets/images/facebook.jpg" width="25" height="auto">
-            </a>
-
-            <a>
-                <img src="assets/images/instagram.png" width="25" height="auto">
-            </a>
-
-            <a>
-               <img src="assets/images/twitter.png" width="25" height="auto">
-            </a>
-            
-            <a>
-                <img src="assets/images/youtube.png" width="25" height="auto">
-            </a>
-        </section>
+                <img src="assets/images/logo.png" alt="BiteBox Logo" width="180">
+                <p> Delicious food delivered to your doorstep.
+                    Fresh, fast and tasty!
+                </p>
+                <a>
+                    <img src="assets/icons/facebook.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/instagram.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/twitter.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/youtube.png" width="25" height="auto">
+                </a>
+            </section>
 
 
             <hr>
@@ -246,10 +239,10 @@
                 <!-- Payment Methods -->
                 <section>
                     <h3>Payment Methods</h3>
-                   <img src="assets/images/visa.png" alt="Visa" width="50" height="auto">
+                    <img src="assets/images/visa.png" alt="Visa" width="50" height="auto">
                     <img src="assets/images/mastercard.png" alt="Mastercard" width="50" height="auto">
-                    <img src="assets/images/upi-ar21.jpg" alt="UPI" width="60" height="auto">
-                    <img src="assets/images/paytm.jpg" alt="Paytm" width="60" height="auto">
+                    <img src="assets/images/upi.png" alt="UPI" width="60" height="auto">
+                    <img src="assets/images/paytm.png" alt="Paytm" width="60" height="auto">
                 </section>
         </div>
 

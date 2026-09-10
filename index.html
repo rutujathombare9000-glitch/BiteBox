@@ -3,6 +3,10 @@
 
 <head>
     <title>BiteBox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/37d1147389.js" crossorigin="anonymous"></script>
@@ -12,65 +16,68 @@
 
 <body>
     <header>
-        
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/images/biteBox_new.png" alt="Bootstrap" width="90" height="auto">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="menu.html">Menu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="bitedeals.html">Bite Deals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="about.html">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="cart.html"><i
-                                        class="fa-solid fa-cart-shopping"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="login.html"><i
-                                        class="fa-solid fa-right-to-bracket"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        
-    </header>
-    <section class="container-fluid">
 
-        <h1>Delicious Food Delivered To Your Doorstep</h1>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.png" alt="Bootstrap" width="90" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="bitedeals.html">Bite Deals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="cart.html"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="login.html"><i
+                                    class="fa-solid fa-right-to-bracket"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <section id="home-hero">
+
+        <h1>Delicious Food Delivered To Your <span>Doorstep</span></h1>
         <p>
             Fresh ingredients, delicious recipes, and fast delivery
             — all in one place.
         </p>
-
-        <a href="menu.html">Order Now</a>
-        |
-        <a href="menu.html">Explore Menu</a>
+        <div class="hero-buttons">
+            <a href="menu.html" class="order-btn">Order Now</a>
+            |<button type="button" class="btn btn-link"></button>
+            <a href="menu.html" class="menu-btn">Explore Menu</a>
+            <button type="button" class="btn btn-link"></button>
+        </div>
     </section>
+
     <section class="container-fluid" id="features">
         <h2>Why Choose BiteBox?</h2>
 
         <article>
-            <img src="assets/images/fresh.jpg" alt="Fresh Ingredients" width="200" height="auto">
+            <img src="assets/icons/fresh.png" alt="Fresh Ingredients" width="200" height="auto">
             <h3>Fresh Ingredients</h3>
             <p> Every meal is prepared using fresh vegetables and premium
                 quality ingredients.
@@ -78,7 +85,7 @@
         </article>
 
         <article>
-            <img src="assets/images/fast-delivery.jpg.jpeg" alt="Fast Delivery" width="200" height="auto">
+            <img src="assets/images/fast-delivery.png" alt="Fast Delivery" width="200" height="auto">
             <h3>Fast Delivery</h3>
             <p>
                 Get your favorite meals delivered quickly to your doorstep.
@@ -87,7 +94,7 @@
         Immediately below the Hero section, add a section "Why to choose bitebox"
 
         <article>
-            <img src="assets/images/hygenic.png" alt="Hygienic Kitchen" width="200" height="auto">
+            <img src="assets/images/hygienic.png" alt="Hygienic Kitchen" width="200" height="auto">
             <h3>Hygienic Kitchen</h3>
             <p>
                 Our meals are prepared under strict hygiene standards by
@@ -96,7 +103,7 @@
         </article>
 
         <article>
-            <img src="assets/images/easy-delivery.jpg.jpeg" alt="Easy Online Ordering" width="200" height="auto">
+            <img src="assets/images/easy.png" alt="Easy Online Ordering" width="200" height="auto">
             <h3>Easy Online Ordering</h3>
             <p>
                 Browse the menu, place your order, and enjoy your meal with
@@ -106,179 +113,176 @@
     </section>
     <!--Todays Special Offers -->
     <div class="container-fluid">
-    <section id="offer">
+        <section id="offer">
 
-        <div class="offer-content">
-            <h2>Today's Special Offer!</h2>
-            <p> Get <strong>20% OFF</strong> on all orders above
-                <strong>₹499</strong>
-            </p>
-            <p> Use Code: <strong>BITE20</strong> </p>
-            <a href="menu.html"> Order Now </a>
-        </div>
-
-        <div class="offer-image">
-            <img src="assets/images/pizzaoff.png" alt="Special Offer Pizza" width="150" height="auto">
-
-            <img src="assets/images/20.jpeg" alt="20% OFF" width="180" height="180">
-        </div>
-    </section>
-    <!--Todays Featured Dishes -->
-    <section id="popular-dishes">
-        <h2>Popular Dishes</h2>
-
-        <article>
-            <img src="assets/images/pizza.png" alt="Cheese Pizza" width="220">
-            <h3>Cheese Pizza</h3>
-            <p>
-                Loaded with fresh vegetables and mozzarella cheese.
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐ </span> <small>(126)</small></p>
-            <p> <strong> ₹249 </strong></p>
-        </article>
-
-        <article>
-            <img src="assets/images/burger.png" alt="Chicken Burger" width="220">
-            <h3>Chicken Burger</h3>
-            <p>
-                Crispy chicken patty served with fresh lettuce and cheese.
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐ </span> <small> (99)</small> </p>
-            <p> <strong>₹199</strong> </p>
-        </article>
-        Replace the existing Featured Dishes section with the Popular Dishes section.
-        <article>
-            <img src="assets/images/pasta.png" alt="White Sauce Pasta" width="220">
-            <h3>White Sauce Pasta</h3>
-            <p>
-                Creamy white sauce pasta tossed with herbs and fresh vegetables.
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐ </span><small> (76) </small> </p>
-            <p> <strong>₹229</strong></p>
-        </article>
-
-        <article>
-            <img src="assets/images/chicken_biryani.png" alt="Chicken Biryani" width="180">
-            <h3>Chicken Biryani</h3>
-            <p>
-                Aromatic basmati rice layered with tender chicken and authentic spices.
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐ </span><small>(112)</small> </p>
-            <p><strong>₹249</strong></p>
-        </article>
-
-        <article>
-            <img src="assets/images/Chocolate_Cake.jpg" alt="Chocolate Cake" width="180">
-            <h3>Chocolate Cake</h3>
-            <p>
-                Rich chocolate sponge layered with creamy chocolate frosting.
-            </p>
-            <p><span>⭐⭐⭐⭐⭐</span><small>(58)</small> </p>
-            <p> <strong>₹149</strong></p>
-        </article>
-    </section>
-
-    <!--Customer Reviews-->
-    <section id="reviews">
-        <h2>What Our Customers Say</h2>
-
-        <article>
-            <img src="assets/images/human.jpg" alt="Priya Sharma" width="80" height="80">
-            <h3>Priya Sharma</h3>
-            <p> Amazing food and super fast delivery.
-                BiteBox is my go-to place every time!
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐</span> </p>
-        </article>
-
-        <article>
-            <img src="assets/images/human.jpg" alt="Rahul Verma" width="80" height="80">
-            <h3>Rahul Verma</h3>
-            <p>
-                Add Customer Review Section immediately below the "Today's Special Offer" section.
-                The food quality is excellent and
-                always fresh. Highly recommended!
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐</span> </p>
-        </article>
-
-
-        <p> <span>⭐⭐⭐⭐⭐</span> </p>
-        </article>
-
-        <article>
-            <img src="assets/images/human.jpg" alt="Anjali Mehta" width="80" height="80">
-            <h3>Anjali Mehta</h3>
-            <p>
-                Great taste, great service and
-                very easy to order. Love it!
-            </p>
-            <p> <span>⭐⭐⭐⭐⭐</span> </p>
-        </article>
-    </section>
-
-    <section id="newsletter">
-        <div class="newsletter-content">
-            <i class="fa-solid fa-envelope fa-2xl"></i>
-
-            <div>
-                <h2>Stay Updated!</h2>
-                <p> Subscribe to our newsletter and get the latest
-                    offers and updates.
+            <div class="offer-content">
+                <h2>Today's Special Offer!</h2>
+                <p> Get <strong>20% OFF</strong> on all orders above
+                    <strong>₹499</strong>
                 </p>
+                <p> Use Code: <strong>BITE20</strong> </p>
+                <a href="menu.html"> Order Now </a>
             </div>
-        </div>
 
-        <div class="newsletter-form">
-            <input type="email" placeholder="Enter your email">
-            <button> Subscribe </button>
-        </div>
+            <div class="offer-image">
+                <img src="assets/images/pizzaoff.png" alt="Special Offer Pizza" width="150" height="auto">
 
-        <div class="newsletter-image">
-            <img src="assets/images/news_letter.png" alt="Newsletter Food" width="100" height="auto">
-        </div>
-    </section> 
-    <section>
-        Restaurant Information
-    </section>
-    <footer>
+                <img src="assets/images/20.jpeg" alt="20% OFF" width="180" height="180">
+            </div>
+        </section>
+        <!--Todays Featured Dishes -->
+        <section id="popular-dishes">
+            <h2>Popular Dishes</h2>
 
-        <!-- Footer Logo Section -->
-        <section>
-            <img src="assets/images/biteBox_new.png" alt="BiteBox Logo" width="180">
-            <p> Delicious food delivered to your doorstep.
-                Fresh, fast and tasty!
-            </p>
+            <article>
+                <img src="assets/images/pizza.png" alt="Cheese Pizza" width="220">
+                <h3>Cheese Pizza</h3>
+                <p>
+                    Loaded with fresh vegetables and mozzarella cheese.
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐ </span> <small>(126)</small></p>
+                <p> <strong> ₹249 </strong></p>
+            </article>
 
-            <a>
-                <img src="assets/images/facebook.jpg" width="25" height="auto">
-            </a>
+            <article>
+                <img src="assets/images/burger.png" alt="Chicken Burger" width="220">
+                <h3>Chicken Burger</h3>
+                <p>
+                    Crispy chicken patty served with fresh lettuce and cheese.
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐ </span> <small> (99)</small> </p>
+                <p> <strong>₹199</strong> </p>
+            </article>
+            Replace the existing Featured Dishes section with the Popular Dishes section.
+            <article>
+                <img src="assets/images/pasta.png" alt="White Sauce Pasta" width="220">
+                <h3>White Sauce Pasta</h3>
+                <p>
+                    Creamy white sauce pasta tossed with herbs and fresh vegetables.
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐ </span><small> (76) </small> </p>
+                <p> <strong>₹229</strong></p>
+            </article>
 
-            <a>
-                <img src="assets/images/instagram.png" width="25" height="auto">
-            </a>
+            <article>
+                <img src="assets/images/chicken-biryani.png" alt="Chicken Biryani" width="180">
+                <h3>Chicken Biryani</h3>
+                <p>
+                    Aromatic basmati rice layered with tender chicken and authentic spices.
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐ </span><small>(112)</small> </p>
+                <p><strong>₹249</strong></p>
+            </article>
 
-            <a>
-               <img src="assets/images/twitter.png" width="25" height="auto">
-            </a>
-            
-            <a>
-                <img src="assets/images/youtube.png" width="25" height="auto">
-            </a>
+            <article>
+                <img src="assets/images/cake.png" alt="Chocolate Cake" width="180">
+                <h3>Chocolate Cake</h3>
+                <p>
+                    Rich chocolate sponge layered with creamy chocolate frosting.
+                </p>
+                <p><span>⭐⭐⭐⭐⭐</span><small>(58)</small> </p>
+                <p> <strong>₹149</strong></p>
+            </article>
         </section>
 
-        <hr>
+        <!--Customer Reviews-->
+        <section id="reviews">
+            <h2>What Our Customers Say</h2>
 
-        <!-- Quick Links -->
+            <article>
+                <img src="assets/images/Priya.png" alt="Priya Sharma" width="80" height="80">
+                <h3>Priya Sharma</h3>
+                <p> Amazing food and super fast delivery.
+                    BiteBox is my go-to place every time!
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐</span> </p>
+            </article>
+
+            <article>
+                <img src="assets/images/rahul.png" alt="Rahul Verma" width="80" height="80">
+                <h3>Rahul Verma</h3>
+                <p>
+                    Add Customer Review Section immediately below the "Today's Special Offer" section.
+                    The food quality is excellent and
+                    always fresh. Highly recommended!
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐</span> </p>
+            </article>
+
+
+            <p> <span>⭐⭐⭐⭐⭐</span> </p>
+            </article>
+
+            <article>
+                <img src="assets/images/anjali.png" alt="Anjali Mehta" width="80" height="80">
+                <h3>Anjali Mehta</h3>
+                <p>
+                    Great taste, great service and
+                    very easy to order. Love it!
+                </p>
+                <p> <span>⭐⭐⭐⭐⭐</span> </p>
+            </article>
+        </section>
+
+        <section id="newsletter">
+            <div class="newsletter-content">
+                <i class="fa-solid fa-envelope fa-2xl"></i>
+
+                <div>
+                    <h2>Stay Updated!</h2>
+                    <p> Subscribe to our newsletter and get the latest
+                        offers and updates.
+                    </p>
+                </div>
+            </div>
+
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button> Subscribe </button>
+            </div>
+
+            <div class="newsletter-image">
+                <img src="assets/images/newsletter-food.png" alt="Newsletter Food" width="100" height="auto">
+            </div>
+        </section>
         <section>
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html">Cart</a></li>
-            </ul>
+            Restaurant Information
+        </section>
+        <footer>
+
+            <!-- Footer Logo Section -->
+            <section>
+                <img src="assets/images/logo.png" alt="BiteBox Logo" width="180">
+                <p> Delicious food delivered to your doorstep.
+                    Fresh, fast and tasty!
+                </p>
+
+                 <a>
+                    <img src="assets/icons/facebook.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/instagram.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/twitter.png" width="25" height="auto">
+                </a>
+                <a>
+                    <img src="assets/icons/youtube.png" width="25" height="auto">
+                </a>
+            </section>
+
+            <hr>
+
+            <!-- Quick Links -->
+            <section>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
 
                 <hr>
 
@@ -311,13 +315,13 @@
                     <h3>Payment Methods</h3>
                     <img src="assets/images/visa.png" alt="Visa" width="50" height="auto">
                     <img src="assets/images/mastercard.png" alt="Mastercard" width="50" height="auto">
-                    <img src="assets/images/upi-ar21.jpg" alt="UPI" width="60" height="auto">
-                    <img src="assets/images/paytm.jpg" alt="Paytm" width="60" height="auto">
+                    <img src="assets/images/upi.png" alt="UPI" width="60" height="auto">
+                    <img src="assets/images/paytm.png" alt="Paytm" width="60" height="auto">
                 </section>
-            </div>
+    </div>
 
-                <hr>
-                <p> © 2026 BiteBox. All Rights Reserved. </p>
+    <hr>
+    <p> © 2026 BiteBox. All Rights Reserved. </p>
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
