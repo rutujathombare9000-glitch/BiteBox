@@ -256,6 +256,7 @@
     font-weight: 700;
     line-height: 54px;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /* About Highlight */
@@ -264,6 +265,7 @@
     color: #ff6b00;
     font-size: 62px;
     font-weight: 400;
+
 }
 /* About Hero Subtitle */
 
@@ -276,6 +278,7 @@
     font-weight: 400;
 
     margin-bottom: 18px;
+    text-align: left;
 
 }
 /* Decorative Line */
@@ -291,6 +294,8 @@
     border: none;
 
     border-radius: 20px;
+
+    
 
 }
 /* Cart Hero Section */
