@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: grid;
+            border: 2px solid black;
+            grid-template-columns: 4fr 4fr 8fr 12fr 2fr;
+            grid-template-areas:
+                "header header header"
+
+                "nav nav nav"
+
+                "main hero side"
+
+                "menu menu review"
+
+                "footer footer footer";
+        }
+
+        .grid-item {
+            border: 1px solid black;
+        }
+
+        /* .element1,
+        .element2,
+        .element3,
+        .element6,
+        .element7,
+        .element8 {
+
+            grid-column: 1 / 3;
+
+        } */
+
+        .element1 {
+            grid-area: header;
+        }
+
+        .element2 {
+            grid-area: nav;
+        }
+
+        .element3 {
+            grid-area: hero;
+        }
+
+        .element4 {
+            grid-area: main;
+        }
+
+        .element5 {
+            grid-area: side;
+        }
+
+        .element6 {
+            grid-area: menu;
+        }
+
+        .element7 {
+            grid-area: review;
+        }
+
+        .element8 {
+            grid-area: footer;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="grid-item element1">
+        <Header>
+    </div>
+    <div class="grid-item element2">Navigation Bar</div>
+    <div class="grid-item element3">Hero Content</div>
+    <div class="grid-item element4">Main Content</div>
+    <div class="grid-item element5">Side Content</div>
+    <div class="grid-item element6">Menu</div>
+    <div class="grid-item element7">Reviews</div>
+    <div class="grid-item element8">Footer</div>
+</body>
+
+</html>
