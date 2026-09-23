@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <script>
+        let a = 10;
+        let b = 10;
+        console.log(a + b)
+        console.log(b - a)
+        console.log(a * b)
+        console.log(b / a)
+        console.log(b % a)
+        //a %= 3;  // a = a%3 - assignment operators
+        console.log(a)
+        console.log(a == b) //false
+        console.log(a > b) // false
+        console.log(a < b) //true
+        console.log(a >= b) // false
+        console.log(a <= b) //true
+        console.log(a != b) // true
+        let t = true;
+        let f = false;
+        console.log(t && f) // false
+        console.log(t || f) // true
+        console.log(!t) // flase
+        console.log(!f) // true
+
+        console.log(a != b ? "The value are not same" : "The value are same") // ternary operator
+
+
+        if (a > 10) {
+            document.write("Please Signup!")
+        } else if (a < 10) {
+            document.write("Please Login")
+        } else {
+            document.write("Third Condition")
+        }
+
+        let payment = prompt("Enter type of payment method/n/n 1. cash, 2. upi, 3. CC");
+        switch (payment) {
+            case "cash":
+                document.write("The payment method is cash");
+                break;
+            case "upi":
+                document.write("The payment method is upi");
+                break;
+            case "CC":
+                document.write("The payment method is CC");
+                break;
+            default:
+                document.write("Please select payment method!");
+        }
+
+        let price = 0;
+        const lostMessage = "Incorrect Answer, Better luck next time!";
+        console.log("Welcome to KBC!");
+        for (let i = 1; i < 4; i++) {
+            let ans = "";
+            switch (i) {
+                case 1:
+                    ans = prompt("What does not grow on a tree according to a popular Hindi saying?\n [a: Money, b: Flower, c: Leaves, d: Fruits] : ");
+                    if (ans === "a") {
+                        price += 1000 * i;
+                        console.log("Correct Answer! Your Prize Money is : ₹" + price);
+                    } else {
+                        console.log(lostMessage);
+                        break;
+                    }
+                    break;
+                case 2:
+                    ans = prompt("Which city is known as the Pink City in India?\n [a: Bangalore, b: Mysore, c: Jaipur, d: Kochi] : ");
+                    if (ans === 'c') {
+                        price += 1000 * i;
+                        console.log("Correct Answer! Your Prize Money is : ₹" + price);
+                    } else {
+                        console.log(lostMessage);
+                        break;
+                    }
+                    break;
+
+                case 3:
+                    ans = prompt("How many states are there in India?\n [a: 28, b: 29, c: 31, d: 30] : ");
+                    if (ans === 'a') {
+                        price += 1000 * i;
+                        console.log("Correct Answer! Your Prize Money is : ₹" + price);
+                        console.log("---------Congratulations! You Won The KBC---------");
+                    } else {
+                        console.log(lostMessage);
+                        break;
+                    }
+                    break;
+
+                default:
+                    console.log("Something went wrong!");
+                    break;
+            }
+
+            if (
+                ans !== 'a' && i === 1
+                ||
+                ans !== 'c' && i === 2
+                ||
+                ans !== 'a' && i === 3) {
+                break; // Stop execution if the answer is wrong
+            }
+        }
+
+    </script>
+</body>
+
+</html>
