@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <script>
+        // let currency;
+        // let value;
+        // let total = 0;
+        // while (true) {
+        //     currency = (prompt("Do you want to present Currency y/n:"));
+        //     if (currency == "y") {
+        //         value = parseInt(prompt("Enter the Note amount:"));
+        //         if (value == 10 || value == 20 || value == 50 || value == 100 || value == 500) {
+        //             console.log(value + " Real currency");
+        //             total += value;
+        //         }
+        //         else {
+        //             console.log("Fake currency");
+        //         }
+        //     }
+        //     else {
+        //         break;
+        //     }
+        // }
+        // console.log(total);
+
+
+        var pay = 0;
+        var episode = 1;
+        console.log("welcome to mxplayer");
+        console.log("Money Heist");
+        do {
+            console.log("Current episode:" + episode);
+            let skip = prompt("if you want to skip episode " + episode + " enter y :");
+            if (skip == "y") {
+                console.log("skip episode:" + episode);
+                episode += 1;
+                continue //skip current iteration
+            }
+            console.log("episode:" + episode + " completed");
+            episode += 1;
+
+            if (pay != 1) {
+                var pay = prompt(("if you want to play next  episode please pay.Select option : \n 1.pay \n 2.cancel \n"));
+            }
+            parseInt(pay);
+        }
+        while (pay == 1 && episode < 5)
+        
+        if (pay == 0) {
+            console.log("Not subscribe plz subscribe for next episode");
+        }
+        else {
+            console.log("Episode completed");
+        }
+
+    </script>
+</body>
+
+</html>
