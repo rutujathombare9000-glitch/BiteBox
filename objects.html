@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects
+    </title>
+</head>
+
+<body>
+    <script>
+
+        // const studentInfo = {
+        //     name: "Riya",
+        //     roleno: 101,
+        //     course: "IT",
+        //     college: "ABC College",
+        //     address: {
+        //         city: "Kalyan",
+        //         pincode: 421301,
+        //         locality:{
+        //             near: "Hospital",
+        //             opp: "School"
+        //         }
+        //     }
+        // }; //literal 
+        // console.log(studentInfo.address.locality.near);
+
+        //     let discountKey = "discount";
+        //     const cart = {
+        //         item: "Laptop",
+        //         price: 50000,
+        //         quantity: 1,
+        //         [discountKey]: 10
+        //     };
+
+        //     cart.color = "Black";
+        //     cart.quantity = 2;
+        //     delete cart.color;
+
+
+        //    console.log(cart);
+        //    console.log(cart.discount);
+
+
+        let box = ["Laptop", "Mouse", "Keyboard", "Printer"]; // array
+
+        console.log(box[0]); // fetch single element from array using index
+        // box.push("Grapes"); // to add element at the end of array
+        console.log(box); // fetch whole array
+        // box.unshift(90); // to add element at the start of array
+        console.log(box);
+        console.log(box.includes("Apple")); // to check if element is present
+        console.log(box.length); // returns number of elements
+        console.log(typeof (box)); // returns type of variable
+
+        for (i = 0; i <= box.length - 1; i++) {
+            console.log(box[i]);
+        } // fetch each element in an array
+
+        //splice
+        box.splice(1, "", "Charger"); // (start index, number of element to delete, items to add)
+        console.log(box);
+
+
+        let allOrders = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let newOrders = ["Monitor", "Webcam"];
+
+        let combinedOrders = allOrders.concat(newOrders); // it will create a new array by combining two other arrays
+        console.log(combinedOrders);
+
+        combinedOrders.sort(); // sort the original array in ascending
+        console.log(combinedOrders);
+
+        combinedOrders.reverse(); // reverse the original array
+        console.log(combinedOrders);
+
+        console.log(combinedOrders.slice(1, 4)); // start index, end index + 1
+
+        console.log(combinedOrders.pop()); //it will remove the last element from original array
+
+        console.log(combinedOrders);
+
+        console.log(combinedOrders.shift()); // removed first element from original array
+
+        console.log(combinedOrders);
+
+        console.log(combinedOrders.indexOf("Mouse")); // return the index or else -1 if not found
+        console.log(combinedOrders.includes("Mouse")); // return true if found else false
+
+        let text = combinedOrders.join(" "); // it will convert all the element to string and seperate with a provided symbol
+        console.log(text);
+        console.log(combinedOrders.length);
+        delete combinedOrders[2]; // deletes elements from specified index
+        console.log(combinedOrders);
+        console.log(combinedOrders.length);
+
+        let result = allOrders.filter(item => item.length > 5);
+        console.log(result);
+
+        let totalChars = allOrders.reduce((sum, item) => sum + item.length, 0);
+        console.log(totalChars);
+
+
+    </script>
+</body>
+
+</html>

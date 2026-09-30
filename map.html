@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Reduce Filter</title>
+</head>
+
+<body>
+    <script>
+        let nums = [1, 2, 3];
+        let result = nums.map(
+            (n, i) => n * 2
+        );
+        console.log(result);
+
+        result = nums.filter(n => n > 1)
+        console.log(result);
+
+        let sum = nums.reduce(
+            (total, n) => total + n, 0
+        );
+        console.log(sum);
+
+        let allOrders = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        let copiedOrders = [...allOrders]; // spread operator ...
+        console.log(copiedOrders);
+
+
+        let [firstOrder,secondOrder, ...remainingOrders] = allOrders; // rest operator
+        console.log(firstOrder);
+        console.log(secondOrder);
+        console.log(remainingOrders);
+    </script>
+</body>
+
+</html>
