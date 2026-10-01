@@ -44,66 +44,121 @@
         //    console.log(cart.discount);
 
 
-        let box = ["Laptop", "Mouse", "Keyboard", "Printer"]; // array
+        // let box = ["Laptop", "Mouse", "Keyboard", "Printer"]; // array
 
-        console.log(box[0]); // fetch single element from array using index
-        // box.push("Grapes"); // to add element at the end of array
-        console.log(box); // fetch whole array
-        // box.unshift(90); // to add element at the start of array
-        console.log(box);
-        console.log(box.includes("Apple")); // to check if element is present
-        console.log(box.length); // returns number of elements
-        console.log(typeof (box)); // returns type of variable
+        // console.log(box[0]); // fetch single element from array using index
+        // // box.push("Grapes"); // to add element at the end of array
+        // console.log(box); // fetch whole array
+        // // box.unshift(90); // to add element at the start of array
+        // console.log(box);
+        // console.log(box.includes("Apple")); // to check if element is present
+        // console.log(box.length); // returns number of elements
+        // console.log(typeof (box)); // returns type of variable
 
-        for (i = 0; i <= box.length - 1; i++) {
-            console.log(box[i]);
-        } // fetch each element in an array
+        // for (i = 0; i <= box.length - 1; i++) {
+        //     console.log(box[i]);
+        // } // fetch each element in an array
 
-        //splice
-        box.splice(1, "", "Charger"); // (start index, number of element to delete, items to add)
-        console.log(box);
+        // //splice
+        // box.splice(1, "", "Charger"); // (start index, number of element to delete, items to add)
+        // console.log(box);
 
 
-        let allOrders = ["Laptop", "Mouse", "Keyboard", "Headphones"];
-        let newOrders = ["Monitor", "Webcam"];
+        // let allOrders = ["Laptop", "Mouse", "Keyboard", "Headphones"];
+        // let newOrders = ["Monitor", "Webcam"];
 
-        let combinedOrders = allOrders.concat(newOrders); // it will create a new array by combining two other arrays
-        console.log(combinedOrders);
+        // let combinedOrders = allOrders.concat(newOrders); // it will create a new array by combining two other arrays
+        // console.log(combinedOrders);
 
-        combinedOrders.sort(); // sort the original array in ascending
-        console.log(combinedOrders);
+        // combinedOrders.sort(); // sort the original array in ascending
+        // console.log(combinedOrders);
 
-        combinedOrders.reverse(); // reverse the original array
-        console.log(combinedOrders);
+        // combinedOrders.reverse(); // reverse the original array
+        // console.log(combinedOrders);
 
-        console.log(combinedOrders.slice(1, 4)); // start index, end index + 1
+        // console.log(combinedOrders.slice(1, 4)); // start index, end index + 1
 
-        console.log(combinedOrders.pop()); //it will remove the last element from original array
+        // console.log(combinedOrders.pop()); //it will remove the last element from original array
 
-        console.log(combinedOrders);
+        // console.log(combinedOrders);
 
-        console.log(combinedOrders.shift()); // removed first element from original array
+        // console.log(combinedOrders.shift()); // removed first element from original array
 
-        console.log(combinedOrders);
+        // console.log(combinedOrders);
 
-        console.log(combinedOrders.indexOf("Mouse")); // return the index or else -1 if not found
-        console.log(combinedOrders.includes("Mouse")); // return true if found else false
+        // console.log(combinedOrders.indexOf("Mouse")); // return the index or else -1 if not found
+        // console.log(combinedOrders.includes("Mouse")); // return true if found else false
 
-        let text = combinedOrders.join(" "); // it will convert all the element to string and seperate with a provided symbol
-        console.log(text);
-        console.log(combinedOrders.length);
-        delete combinedOrders[2]; // deletes elements from specified index
-        console.log(combinedOrders);
-        console.log(combinedOrders.length);
+        // let text = combinedOrders.join(" "); // it will convert all the element to string and seperate with a provided symbol
+        // console.log(text);
+        // console.log(combinedOrders.length);
+        // delete combinedOrders[2]; // deletes elements from specified index
+        // console.log(combinedOrders);
+        // console.log(combinedOrders.length);
 
-        let result = allOrders.filter(item => item.length > 5);
-        console.log(result);
+        // let result = allOrders.filter(item => item.length > 5);
+        // console.log(result);
 
-        let totalChars = allOrders.reduce((sum, item) => sum + item.length, 0);
-        console.log(totalChars);
+        // let totalChars = allOrders.reduce((sum, item) => sum + item.length, 0);
+        // console.log(totalChars);
+        
+         let name = "Hello Hello Good Morning"; // immutable
+        let cars = ["volvo", "maruti", "BMW", "XUV"];
+        let age = 50;
+        console.log(name.replace("Hello", "Hi")); // replaces first occurance
+        console.log(name.replaceAll("Hello", "Hi")); // replaces all the occurance
+        console.log(name);
 
+        console.log(name.indexOf("Good")); // return the index of first character
+        console.log(name.valueOf()); // no need to call it explicitly
+
+        console.log(name.startsWith("Hello")); // it checks the starting character oo string
+        console.log(name.endsWith("Hello")); // it checks the ending character of string
+
+        console.log(name.substr(name.indexOf("G"), name.indexOf("G") - 7)); // it will extarct specific part of a string (startIndex, length)
+        console.log(name.substring(12, 16)); // it extracts the characted between two indexs
+
+        console.log(name.split(" ")); // it converts string to an array
+        console.log(cars.join(" ")); // it converts array to a string
+
+        console.log(window.screen); // it will retrun all the properties of screen
+
+        console.warn("Thi is a warning"); // shows message as a warning in console
+        console.error("This is a error"); // shows message as a error in console
+
+        console.log(location.href); //it will return full url of the webpage
+        console.log(location.hostname); // it will return domain name
+        console.log(location.pathname); // it will return the path
+
+        const btn = document.getElementById("btnClick");
+
+        btn.addEventListener("mouseout", function () {
+            document.querySelector("#msg").innerHTML = "Sending OTP...";
+            console.log("Clicked");
+
+            setTimeout(() => {
+                document.querySelector("#msg").innerHTML = "OTP Sent ✔";
+            }, 3000);
+        });
+
+        let count = 0;
+
+        // setInterval(() => {
+        //     count++;
+        //     document.getElementById("count").innerText = count;
+        // }, 1000);
+
+        // history.forward(); // take one step ahead  
+
+
+        
+
+        //history.forward(); // take one step ahead
 
     </script>
+        
+        <!-- <p>New Notifications: <span id="count">0</span></p> -->
+    
 </body>
 
 </html>
