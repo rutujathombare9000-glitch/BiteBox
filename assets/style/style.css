@@ -1767,7 +1767,7 @@ textarea:focus {
 
 /* Button */
 
-button {
+/* button {
     width: 100%;
     height: 42px;
     background: #ff6b00;
@@ -1778,7 +1778,55 @@ button {
     font-weight: 600;
     font-family: Poppins, sans-serif;
     cursor: pointer;
+} */
+
+
+.quantity-box {
+    width: 122px;
+    height: 40px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
 }
+.quantity-box button:first-child {
+    border-right: 1px solid #e5e5e5;
+}
+
+.quantity-box button:last-child {
+    border-left: 1px solid #e5e5e5;
+}
+
+.quantity-box span {
+    width: 46px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+ .quantity-box button {
+    width: 38px;
+    height: 40px;
+
+    border: none;
+    background: #ffffff;
+
+    font-size: 22px;
+    font-weight: 600;
+    color: #444;
+
+    cursor: pointer;
+}
+
+
+
+
 
 /* Hover Effects */
 .event-card a:hover,

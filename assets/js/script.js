@@ -1,14 +1,13 @@
+let restaurantName = "BiteBox";
 
-        let restaurantName = "BiteBox";
-        
-        let customerName = prompt(
-            "Welcome to " + restaurantName + "!\n\nWhat is your name?"
+let customerName = prompt(
+    "Welcome to " + restaurantName + "!\n\nWhat is your name?"
 
-        );
-        alert("Hello" + customerName + "!\n\n Welcome to BiteBox.");
-        let exploreMenu = confirm("World you like t explore our menu?");
+);
+alert("Hello " + customerName + "!\n\n Welcome to BiteBox.");
+let exploreMenu = confirm("Would you like to explore our menu?");
 
-        if (exploreMenu) {
+if (exploreMenu) {
 
     alert("Great! Let's explore the BiteBox menu.");
 
@@ -20,7 +19,7 @@ else {
 
 }
 
-let choice = prompt( "Choose a BiteBox category:\n" +
+let choice = prompt("Choose a BiteBox category:\n" +
     "1. Pizza\n" +
     "2. Burgers\n" +
     "3. Pasta\n" +
@@ -46,8 +45,7 @@ switch (choice) {
 
 for (let i = 1; i <= 3; i++) {
     let food = prompt("Enter food item " + i);
-    let quantity = prompt("Enter quantity for " + food );
+    let quantity = prompt("Enter quantity for " + food);
     console.log(food + " - Quantity: " + quantity);
 }
-
 
