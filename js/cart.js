@@ -7,7 +7,7 @@ let cart =
 
 const cartItems = document.getElementById("cart-items");
 
-cart.forEach((product) => {
+cart.forEach((product, index) => {
     cartItems.innerHTML += `
         <tr>
 
@@ -34,11 +34,11 @@ cart.forEach((product) => {
 
                 <div class="quantity-box">
 
-                    <button>-</button>
+                    <button onclick="decreaseQuantity(${index})">-</button>
 
                     <span>${product.quantity}</span>
 
-                    <button>+</button>
+                    <button onclick="increaseQuantity(${index})">+</button>
 
                 </div>
 
@@ -63,20 +63,22 @@ cart.forEach((product) => {
         </tr>
     `;
 });
+
+
 function calculateItemTotal(price, quantity) {
     console.log("CalculateItemTotal", price * quantity);
     return price * quantity;
 
 }
 
-const pizzaInput = document.getElementById("margherita-pizza").textContent;
-console.log("pizzaInput", pizzaInput);
+const cartItem = document.getElementById("cart-items").textContent;
+console.log("cartItem", cartItem);
 
-const burgerInput = document.getElementById("cheese-burger").textContent;
-console.log("burgerInput", burgerInput);
+// const burgerInput = document.getElementById("cheese-burger").textContent;
+// console.log("burgerInput", burgerInput);
 
-const pastaInput = document.getElementById("creamy-pasta").textContent;
-console.log("pastaInput", pastaInput);
+// const pastaInput = document.getElementById("creamy-pasta").textContent;
+// console.log("pastaInput", pastaInput);
 
 let cartRows = document.querySelectorAll(
     "#shopping-cart tbody tr"
@@ -201,6 +203,7 @@ function increaseQuantity(index) {
     renderCart();
     updateOrderSummary();
 }
+
 function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
@@ -210,15 +213,16 @@ function decreaseQuantity(index) {
     renderCart();
     updateOrderSummary();
 }
-if(cartbody){
-cartBody.addEventListener("click", function (event) {
+
+if (cartItems) {
+    cartItems.addEventListener("click", function (event) {
         let button = event.target.closest("button");
   
         if (!button) {
             return;
         }
 
-        let index = parseInt(button.dataset.index);
+        let index = Number.parseInt(button.dataset.index);
 
         if (button.classList.contains( "increase")) {
             increaseQuantity(index);
@@ -233,17 +237,92 @@ cartBody.addEventListener("click", function (event) {
 }
 
 
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("biteboxCart",JSON.stringify(cart));
+
+    renderCart();
+    updateOrderSummary();
+}
 
 
+function renderCart() {
+    cartItems.innerHTML = "";
+    cart.forEach(function (item, index) {
+        let itemTotal = item.price * item.quantity;
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+
+            <td>
+
+                <div class="cart-item">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
+
+                    <div>
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </td>
+
+            <td>
+                ₹${item.price}
+            </td>
+
+  <td>
+
+                <div class="quantity-box">
+
+                    <button
+                        class="decrease"
+                        data-index="${index}">
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        class="increase"
+                        data-index="${index}">
+                        +
+                    </button>
+
+                </div>
+
+            </td>
 
 
+            <td>
+                ₹${itemTotal.toFixed(2)}
+            </td>
 
+ <td>
 
+    <a href="#" onclick="removeFromCart(${index}); return false;">
 
+    <img src="assets/icons/delete.png" alt="Delete" width="25">
 
+    </a>
 
+            </td>
 
+        `;
 
+        cartItems.appendChild(row);
 
+    });
+}
 
-
+renderCart();

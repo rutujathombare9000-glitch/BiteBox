@@ -1,9 +1,6 @@
-let cart =
-    JSON.parse(
-      
-        localStorage.getItem("biteboxCart")
-      
-    ) || [];
+let cart = JSON.parse(localStorage.getItem("biteboxCart")) || [];
+
+
 let menuContainer = document.getElementById("menu-items");
 console.log("menuContainer:", menuContainer);
 if (menuContainer) {
@@ -21,6 +18,7 @@ if (menuContainer) {
     }
     );
 }
+
 function addToCart(card) {
     let name = card.querySelector("h3").textContent.trim();
 
@@ -67,9 +65,6 @@ let cartBody =
     document.querySelector(
         "#shopping-cart tbody"
     );
-function renderCart() {
-    cartBody.innerHTML = "";
-}
 
 function renderCart() {
     if (!cartBody) {
@@ -108,88 +103,9 @@ Add this inside renderCart() immediately after cartBody.innerHTML = "";:
         return;
 
     }
-
-
-    // cart.forEach() comes here
-    cart.forEach(function (item, index) {
-        let itemTotal = item.price * item.quantity;
-        let row = document.createElement("tr");
-
-        row.innerHTML = `
-
-            <td>
-
-                <div class="cart-item">
-
-                    <img
-                        src="${item.image}"
-                        alt="${item.name}"
-                    >
-
-                    <div>
-
-                        <h3>
-                            ${item.name}
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </td>
-
-            <td>
-                ₹${item.price}
-            </td>
-
-  <td>
-
-                <div class="quantity-box">
-
-                    <button
-                        class="decrease"
-                        data-index="${index}">
-                        −
-                    </button>
-
-                    <span>
-                        ${item.quantity}
-                    </span>
-
-                    <button
-                        class="increase"
-                        data-index="${index}">
-                        +
-                    </button>
-
-                </div>
-
-            </td>
-
-
-            <td>
-                ₹${itemTotal.toFixed(2)}
-            </td>
-
- <td>
-
-    <a href="#" class="remove-item" data-index="${index}">
-
-    <img src="assets/icons/delete.png" alt="Delete" width="25">
-
-    </a>
-
-            </td>
-
-        `;
-
-
-
-        cartBody.appendChild(row);
-
-    });
-
 }
+
+
 function increaseQuantity(index) {
     cart[index].quantity++;
     localStorage.setItem(
@@ -199,6 +115,7 @@ function increaseQuantity(index) {
     renderCart();
     updateOrderSummary();
 }
+
 function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
@@ -208,7 +125,9 @@ function decreaseQuantity(index) {
     renderCart();
     updateOrderSummary();
 }
-if(cartbody){
+
+console.log("cartBody:", cartBody);
+if(cartBody){
 cartBody.addEventListener("click", function (event) {
         let button = event.target.closest("button");
   
@@ -218,7 +137,7 @@ cartBody.addEventListener("click", function (event) {
 
         let index = parseInt(button.dataset.index);
 
-        if (button.classList.contains( "increase")) {
+        if (button.classList.contains("increase")) {
             increaseQuantity(index);
         }
 
@@ -239,16 +158,6 @@ function removeFromCart(index) {
     updateOrderSummary();
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
