@@ -159,5 +159,75 @@ function removeFromCart(index) {
 
 }
 
+//Smart Menu Search & Filtering
+
+let menuCards = document.querySelectorAll("#menu-items article");
+console.log("menuCards:", menuCards);
+
+let searchInput = document.getElementById("menu-search");
+
+let searchButton = document.getElementById("search-button");
+console.log("searchButton:", searchButton);
+console.log("searchInput:", searchInput);
+
+function searchMenu(searchText) {
+    let searchValue =  searchText .trim().toLowerCase();
+
+    menuCards.forEach(function(card) {
+        let foodName = card.querySelector("h3").textContent.trim().toLowerCase();
+
+        if (foodName.includes(searchValue)) {
+            card.style.display = "";
+        }
+        else {
+            card.style.display = "none";
+        }
+    });
+
+}
+console.log("searchMenu:", searchMenu);
+if (searchButton) {
+    searchButton.addEventListener(
+        "click",
+        function() {
+
+            searchMenu(
+                searchInput.value
+            );
+        }
+    );
+
+}
 
 
+
+// Task 2: Implement Category Filtering
+
+let categoryCards = document.querySelectorAll("#categories article");
+function filterMenu(category) {
+
+    menuCards.forEach(function(card) {
+        let cardCategory = card.dataset.category.toLowerCase();
+
+        if (cardCategory === category) {
+            card.style.display = "";
+        }
+        else {
+            card.style.display = "none";
+        }
+    });
+
+}
+categoryCards.forEach(
+    function(card) {
+
+        card.addEventListener("click",function() {
+                let category = card.querySelector("h3")
+                        .textContent
+                        .trim()
+                        .toLowerCase();
+                filterMenu(category);
+            }
+        );
+    }
+);
