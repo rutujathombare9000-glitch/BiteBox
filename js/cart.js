@@ -207,7 +207,7 @@ function increaseQuantity(index) {
 function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
-        localStorage.setItem("biteboxCart",JSON.stringify(cart)
+        localStorage.setItem("biteboxCart", JSON.stringify(cart)
         );
     }
     renderCart();
@@ -217,14 +217,14 @@ function decreaseQuantity(index) {
 if (cartItems) {
     cartItems.addEventListener("click", function (event) {
         let button = event.target.closest("button");
-  
+
         if (!button) {
             return;
         }
 
         let index = Number.parseInt(button.dataset.index);
 
-        if (button.classList.contains( "increase")) {
+        if (button.classList.contains("increase")) {
             increaseQuantity(index);
         }
 
@@ -233,16 +233,17 @@ if (cartItems) {
         }
 
     }
-);
+    );
 }
 
 
 function removeFromCart(index) {
     cart.splice(index, 1);
-    localStorage.setItem("biteboxCart",JSON.stringify(cart));
+    localStorage.setItem("biteboxCart", JSON.stringify(cart));
 
     renderCart();
     updateOrderSummary();
+
 }
 
 
@@ -326,3 +327,11 @@ function renderCart() {
 }
 
 renderCart();
+
+function clearCart() {
+    cart = [];
+    localStorage.removeItem("biteboxCart");
+    renderCart();
+    updateOrderSummary();
+}
+
