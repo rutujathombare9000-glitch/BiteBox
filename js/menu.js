@@ -313,7 +313,16 @@ const addMenuBtn = document.getElementById("add-menu-btn");
 const menuModal = document.getElementById("menu-modal");
 const cancelMenuForm = document.getElementById("cancel-menu-form");
 
+// addMenuBtn.addEventListener("click", function () {
+//     menuModal.classList.add("show");
+// });
 addMenuBtn.addEventListener("click", function () {
+    updateMenuId = null;
+    menuForm.reset();
+    document.querySelector(".modal-header h2").textContent =
+        "Add Menu Item";
+    document.querySelector("#menu-form button[type='submit']").textContent =
+        "Add Menu Item";
     menuModal.classList.add("show");
 });
 
@@ -323,11 +332,13 @@ cancelMenuForm.addEventListener("click", function () {
 
 const menuForm = document.getElementById("menu-form");
 
+const API_URL = "https://6ac3b144ae53bf25b80ed67d.mockapi.io/menu";
+
+
 menuForm.addEventListener("submit", async function (event) {
-
     event.preventDefault();
-
     const name = document.getElementById("menu-name").value;
+
     const price = document.getElementById("menu-price").value;
     const category = document.getElementById("menu-category").value;
     const rating = document.getElementById("menu-rating").value;
@@ -343,29 +354,43 @@ menuForm.addEventListener("submit", async function (event) {
         image: image
     };
 
+    try {
+        if (updateMenuId !== null) {
+            await updateMenuItem(updateMenuId, menuItem);
+            updateMenuId = null;
+        } else {
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(menuItem)
+            });
 
-    const API_URL = "https://6ac3b144ae53bf25b80ed67d.mockapi.io/menu";
+            const data = await response.json();
+            console.log("Menu item added:", data);
 
-   try {
-    const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(menuItem)
-    });
+            displayMenuItems([data]);
+        }
+        menuModal.classList.remove("show");
+        menuForm.reset();
+    } catch (error) {
 
-    const data = await response.json();
-    console.log("Menu item added:", data);
+        console.error("Error saving menu item:", error);
 
-    displayMenuItems([data]);
-    menuModal.classList.remove("show");
-    menuForm.reset();
+    }
 
-} catch (error) {
-    console.error("Error adding menu item:", error);
+});
+
+async function fetchMenuItems() {
+    try {
+        const response = await fetch(API_URL);
+        const menuItems = await response.json();
+        console.log("Menu items fetched:", menuItems);
+    } catch (error) {
+        console.error("Error fetching menu items:", error);
+    }
 }
-
 function displayMenuItems(menuItems) {
 
     const menuContainer = document.getElementById("menu-container");
@@ -392,4 +417,6 @@ function displayMenuItems(menuItems) {
     });
 }
 fetchMenuItems();
+
+
 
