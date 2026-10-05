@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
 <body>
     <header>
         <div>
@@ -44,10 +43,19 @@
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="about.html">About Us</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="cart.html"><i
-                                    class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="cart.html" class="cart-icon">
+                                <span class="cart-wrapper">
+                                    <img src="assets/icons/cart.png" alt="Cart Icon" width="22" height="22">
+                                    <span id="cart-count">0</span>
+                                </span>
+                            </a>
                         </li>
+                        <button type="button" id="theme-toggle" class="theme-toggle">
+                            <span class="theme-icon">☀</span>
+                            <span class="theme-text"> DAY MODE</span>
+                        </button>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="login.html"><i
                                     class="fa-solid fa-right-to-bracket"></i></a>
@@ -94,13 +102,74 @@
                 </article>
             </div>
         </section>
-        <section class="menu-search">
-            <input type="text" id="menu-search" placeholder="Search for dishes...">
-            <button type="button" id="search-button">
-                <img src="assets/icons/search.png" alt="Search" width="20" height="20">
-            </button>
-        </section>
-        <!-- Menu Items Section -->
+        <div class="menu-controls">
+
+            <div class="menu-search">
+                <input type="text" id="menu-search" placeholder="Search for dishes...">
+
+                <button type="button" id="search-button">
+                    <img src="assets/icons/search.png" width="20" height="20">
+                </button>
+            </div>
+            <button type="button" id="add-menu-btn"> + Add Menu Item </button>
+
+            <!-- <div id="menu-modal" class="menu-modal">
+                <div class="menu-modal-content">
+                    <div class="modal-header">
+                        <h2>Add Menu Item</h2>
+                    </div>
+
+                    <form id="menu-form">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="menu-name"> Menu Item Name </label>
+                                <input type="text" id="menu-name" placeholder="Enter item name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="menu-price"> Price (₹) </label>
+                                <input type="number" id="menu-price" placeholder="Enter price" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="menu-category"> Category </label>
+                                <input type="text" id="menu-category" placeholder="Enter category" required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="menu-rating"> Rating (0 - 5) </label>
+                                <input type="text" id="menu-rating" placeholder="★★★★★" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="menu-reviews"> Number of Reviews </label>
+                                <input type="number" id="menu-reviews" placeholder="Enter number of reviews" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="menu-image"> Image URL / Path </label>
+                                <input type="text" id="menu-image" placeholder="Enter image URL or path" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" id="cancel-menu-form"> Cancel </button>
+                            <button type="submit"> Add Menu Item </button>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+
+        </div>
+
         <section id="menu-items">
 
             <h2>
@@ -108,15 +177,11 @@
                 Popular Dishes
                 <span></span>
             </h2>
-
             <div>
-
                 <!-- Menu Item 1 -->
 
                 <article data-category="pizza">
-                
-
-                    <span class="tag">Bestseller</span>
+                     <span class="tag">Bestseller</span>
 
                     <img src="assets/images/margherita-pizza.png" alt="Margherita Pizza">
 
@@ -130,9 +195,10 @@
                     <p class="price">₹249</p>
 
                     <button>
-                        <img src="assets/icons/cart-red.png" alt="Cart" width="14" height="14">
+                        <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                         Add to Cart
                     </button>
+
 
                 </article>
 
@@ -152,7 +218,7 @@
                     <p class="price">₹199</p>
 
                     <button>
-                        <img src="assets/icons/cart-red.png" alt="Cart" width="14" height="14">
+                        <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                         Add to Cart
                     </button>
 
@@ -174,7 +240,7 @@
                     <p class="price">₹229</p>
 
                     <button>
-                        <img src="assets/icons/cart-red.png" alt="Cart" width="14" height="14">
+                        <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                         Add to Cart
                     </button>
 
@@ -198,7 +264,7 @@
                     <p class="price">₹279</p>
 
                     <button>
-                        <img src="assets/icons/cart-red.png" alt="Cart" width="14" height="14">
+                        <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                         Add to Cart
                     </button>
 
@@ -220,7 +286,7 @@
                     <p class="price">₹149</p>
 
                     <button>
-                        <img src="assets/icons/cart-red.png" alt="Cart" width="14" height="14">
+                        <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                         Add to Cart
                     </button>
 

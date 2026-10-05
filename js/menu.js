@@ -54,7 +54,7 @@ function addToCart(card) {
     }
 
     console.log("Cart:", cart);
-    localStorage.setItem("biteboxCart",JSON.stringify(cart));
+    localStorage.setItem("biteboxCart", JSON.stringify(cart));
     renderCart();
 
 
@@ -119,7 +119,7 @@ function increaseQuantity(index) {
 function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
-        localStorage.setItem("biteboxCart",JSON.stringify(cart)
+        localStorage.setItem("biteboxCart", JSON.stringify(cart)
         );
     }
     renderCart();
@@ -127,10 +127,10 @@ function decreaseQuantity(index) {
 }
 
 console.log("cartBody:", cartBody);
-if(cartBody){
-cartBody.addEventListener("click", function (event) {
+if (cartBody) {
+    cartBody.addEventListener("click", function (event) {
         let button = event.target.closest("button");
-  
+
         if (!button) {
             return;
         }
@@ -147,12 +147,12 @@ cartBody.addEventListener("click", function (event) {
 
     }
 
-);
+    );
 }
 
 function removeFromCart(index) {
     cart.splice(index, 1);
-    localStorage.setItem("biteboxCart",JSON.stringify(cart));
+    localStorage.setItem("biteboxCart", JSON.stringify(cart));
 
     renderCart();
     updateOrderSummary();
@@ -171,9 +171,9 @@ console.log("searchButton:", searchButton);
 console.log("searchInput:", searchInput);
 
 function searchMenu(searchText) {
-    let searchValue =  searchText .trim().toLowerCase();
+    let searchValue = searchText.trim().toLowerCase();
 
-    menuCards.forEach(function(card) {
+    menuCards.forEach(function (card) {
         let foodName = card.querySelector("h3").textContent.trim().toLowerCase();
 
         if (foodName.includes(searchValue)) {
@@ -189,7 +189,7 @@ console.log("searchMenu:", searchMenu);
 if (searchButton) {
     searchButton.addEventListener(
         "click",
-        function() {
+        function () {
 
             searchMenu(
                 searchInput.value
@@ -206,7 +206,7 @@ if (searchButton) {
 let categoryCards = document.querySelectorAll("#categories article");
 function filterMenu(category) {
 
-    menuCards.forEach(function(card) {
+    menuCards.forEach(function (card) {
         let cardCategory = card.dataset.category.toLowerCase();
 
         if (cardCategory === category) {
@@ -219,15 +219,177 @@ function filterMenu(category) {
 
 }
 categoryCards.forEach(
-    function(card) {
+    function (card) {
 
-        card.addEventListener("click",function() {
-                let category = card.querySelector("h3")
-                        .textContent
-                        .trim()
-                        .toLowerCase();
-                filterMenu(category);
-            }
+        card.addEventListener("click", function () {
+            let category = card.querySelector("h3")
+                .textContent
+                .trim()
+                .toLowerCase();
+            filterMenu(category);
+        }
         );
     }
 );
+let themeButton = document.getElementById("theme-toggle");
+
+
+function toggleTheme() {
+    document.body.classList.toggle("dark-theme");
+
+    let themeIcon = themeButton.querySelector(".theme-icon");
+
+    let themeText = themeButton.querySelector(".theme-text");
+
+    if (document.body.classList.contains("dark-theme")) {
+        themeIcon.textContent = "☾";
+        themeText.textContent = "NIGHT MODE";
+        localStorage.setItem("biteboxTheme", "dark");
+    }
+
+    else {
+        themeIcon.textContent = "☀";
+        themeText.textContent = "DAY MODE";
+        localStorage.setItem("biteboxTheme", "light");
+
+    }
+}
+
+function loadTheme() {
+    let savedTheme = localStorage.getItem("biteboxTheme");
+
+    /* Disable animation while loading */
+    document.body.classList.add("theme-loading");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-theme");
+    }
+
+    else {
+        document.body.classList.remove("dark-theme");
+    }
+
+    let themeIcon = themeButton.querySelector(".theme-icon");
+
+    let themeText = themeButton.querySelector(".theme-text");
+
+    if (savedTheme === "dark") {
+        if (themeIcon) {
+            themeIcon.textContent = "☾";
+        }
+
+        if (themeText) {
+            themeText.textContent = "NIGHT MODE";
+        }
+    }
+
+    else {
+
+        if (themeIcon) {
+            themeIcon.textContent = "☀";
+        }
+
+
+        if (themeText) {
+            themeText.textContent = "DAY MODE";
+        }
+    }
+
+    /* Allow animation again */
+    setTimeout(function () {
+        document.body.classList.remove("theme-loading");
+    }, 50);
+
+}
+if (themeButton) {
+    themeButton.addEventListener("click", function () {
+        toggleTheme();
+    }
+    );
+}
+loadTheme();
+
+const addMenuBtn = document.getElementById("add-menu-btn");
+const menuModal = document.getElementById("menu-modal");
+const cancelMenuForm = document.getElementById("cancel-menu-form");
+
+addMenuBtn.addEventListener("click", function () {
+    menuModal.classList.add("show");
+});
+
+cancelMenuForm.addEventListener("click", function () {
+    menuModal.classList.remove("show");
+});
+
+const menuForm = document.getElementById("menu-form");
+
+menuForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("menu-name").value;
+    const price = document.getElementById("menu-price").value;
+    const category = document.getElementById("menu-category").value;
+    const rating = document.getElementById("menu-rating").value;
+    const reviews = document.getElementById("menu-reviews").value;
+    const image = document.getElementById("menu-image").value;
+
+    const menuItem = {
+        name: name,
+        price: price,
+        category: category,
+        rating: rating,
+        reviews: reviews,
+        image: image
+    };
+
+
+    const API_URL = "https://6ac3b144ae53bf25b80ed67d.mockapi.io/menu";
+
+   try {
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(menuItem)
+    });
+
+    const data = await response.json();
+    console.log("Menu item added:", data);
+
+    displayMenuItems([data]);
+    menuModal.classList.remove("show");
+    menuForm.reset();
+
+} catch (error) {
+    console.error("Error adding menu item:", error);
+}
+
+function displayMenuItems(menuItems) {
+
+    const menuContainer = document.getElementById("menu-container");
+
+    menuItems.forEach(menuItem => {
+
+        const card = document.createElement("article");
+
+        card.innerHTML = `
+            <img src="${menuItem.image}" alt="${menuItem.name}">
+            <h3>${menuItem.name}</h3>
+            <p class="rating">
+                ${menuItem.rating}
+                <small>(${menuItem.reviews})</small>
+            </p>
+                      <p class="price">₹${menuItem.price}</p>
+            <button>
+                <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
+                Add to Cart
+            </button>
+        `;
+        menuContainer.appendChild(card);
+
+    });
+}
+fetchMenuItems();
+
