@@ -218,6 +218,7 @@ function filterMenu(category) {
     });
 
 }
+
 categoryCards.forEach(
     function (card) {
 
@@ -301,6 +302,7 @@ function loadTheme() {
     }, 50);
 
 }
+
 if (themeButton) {
     themeButton.addEventListener("click", function () {
         toggleTheme();
@@ -391,9 +393,10 @@ async function fetchMenuItems() {
         console.error("Error fetching menu items:", error);
     }
 }
-function displayMenuItems(menuItems) {
 
-    const menuContainer = document.getElementById("menu-container");
+function displayMenuItems(menuItems) {
+    // used menu-items instead of menu-container to match the id in the HTML
+    const allMenuItems = document.getElementById("menu-items");
 
     menuItems.forEach(menuItem => {
 
@@ -406,19 +409,18 @@ function displayMenuItems(menuItems) {
                 ${menuItem.rating}
                 <small>(${menuItem.reviews})</small>
             </p>
-                      <p class="price">₹${menuItem.price}</p>
+            <p class="price">₹${menuItem.price}</p>
             <button>
                 <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
                 Add to Cart
             </button>
         `;
-        menuContainer.appendChild(card);
+
+        allMenuItems.appendChild(card);
 
     });
 }
 fetchMenuItems();
-
-// appendChild(card) error occurs because the menuContainer is not found in the DOM. The element with id "menu-container" does not exist in the HTML, so when you try to append a child to it, it throws an error. Make sure that there is an element with id "menu-container" in your HTML file where you want to display the menu items.
 
 
 
