@@ -418,5 +418,7 @@ function displayMenuItems(menuItems) {
 }
 fetchMenuItems();
 
+// appendChild(card) error occurs because the menuContainer is not found in the DOM. The element with id "menu-container" does not exist in the HTML, so when you try to append a child to it, it throws an error. Make sure that there is an element with id "menu-container" in your HTML file where you want to display the menu items.
+
 
 
