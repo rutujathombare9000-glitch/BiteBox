@@ -3937,8 +3937,8 @@ body.dark-theme #cart-actions a {
 
 #cart-count {
     position: absolute;
-    top: -8px;
-    right: -10px;
+    top: -6px;
+    right: -7px;
     width: 18px;
     height: 18px;
 
@@ -3950,6 +3950,32 @@ body.dark-theme #cart-actions a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.navbar-nav {
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar-nav .cart-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    line-height: 1;
+}
+
+.navbar-nav .cart-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-nav .theme-toggle {
+    flex: 0 0 auto;
+    margin: 0 4px;
 }
 
 /* Task 3: Implement Contact Form Feedback */
@@ -4354,38 +4380,6 @@ body.dark-theme #cart-actions a {
     border-color: #e53935;
 }
 
-#menu-items article {
-    position: relative;
-}
-
-#menu-items article .menu-actions {
-    position: absolute;
-    right: 20px;
-    bottom: 68px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-}
-#menu-items article .menu-actions button {
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    cursor: pointer;
-}
-#menu-items article .menu-actions button img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-}
-
-#menu-items article .menu-actions button:hover {
-    background: transparent;
-}
 
 
 

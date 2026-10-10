@@ -161,8 +161,8 @@ function removeFromCart(index) {
 
 //Smart Menu Search & Filtering
 
-let menuCards = document.querySelectorAll("#menu-items article");
-console.log("menuCards:", menuCards);
+// let menuCards = document.querySelectorAll("#menu-items article");
+// console.log("menuCards:", menuCards);
 let searchInput = document.getElementById("menu-search");
 let searchButton = document.getElementById("search-button");
 console.log("searchButton:", searchButton);
@@ -170,18 +170,19 @@ console.log("searchInput:", searchInput);
 
 function searchMenu(searchText) {
     let searchValue = searchText.trim().toLowerCase();
+    const menuCards = document.querySelectorAll("#menu-items article");
 
     menuCards.forEach(function (card) {
-        let foodName = card.querySelector("h3").textContent.trim().toLowerCase();
+
+        let foodName = card.querySelector("h3").textContent
+            .trim().toLowerCase();
 
         if (foodName.includes(searchValue)) {
             card.style.display = "";
-        }
-        else {
+        } else {
             card.style.display = "none";
         }
     });
-
 }
 console.log("searchMenu:", searchMenu);
 if (searchButton) {
@@ -204,17 +205,21 @@ if (searchButton) {
 let categoryCards = document.querySelectorAll("#categories article");
 function filterMenu(category) {
 
+    const menuCards = document.querySelectorAll("#menu-items article");
+
     menuCards.forEach(function (card) {
-        let cardCategory = card.dataset.category.toLowerCase();
+
+        let cardCategory =
+            card.dataset.category.toLowerCase();
 
         if (cardCategory === category) {
+
             card.style.display = "";
-        }
-        else {
+
+        } else {
             card.style.display = "none";
         }
     });
-
 }
 
 categoryCards.forEach(
@@ -474,7 +479,7 @@ document.getElementById("menu-items").addEventListener("click", function (event)
             card.dataset.id;
 
         console.log("Delete Menu ID:", menuId);
-        deleteMenuItem(menuId,card);
+        deleteMenuItem(menuId, card);
     }
 });
 async function updateMenuItem(menuId, menuItem) {
