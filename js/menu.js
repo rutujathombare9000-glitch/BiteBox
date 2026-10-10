@@ -314,13 +314,15 @@ loadTheme();
 const addMenuBtn = document.getElementById("add-menu-btn");
 const menuModal = document.getElementById("menu-modal");
 const cancelMenuForm = document.getElementById("cancel-menu-form");
+ let updateMenuId = null;
 
 // addMenuBtn.addEventListener("click", function () {
 //     menuModal.classList.add("show");
 // });
 addMenuBtn.addEventListener("click", function () {
-    updateMenuId = null;
+    // updateMenuId = null;
     menuForm.reset();
+
     document.querySelector(".modal-header h2").textContent =
         "Add Menu Item";
     document.querySelector("#menu-form button[type='submit']").textContent =
@@ -372,7 +374,7 @@ menuForm.addEventListener("submit", async function (event) {
             const data = await response.json();
             console.log("Menu item added:", data);
 
-            displayMenuItems([data]);
+         displayMenuItems([data]);
         }
         menuModal.classList.remove("show");
         menuForm.reset();
@@ -384,43 +386,80 @@ menuForm.addEventListener("submit", async function (event) {
 
 });
 
-async function fetchMenuItems() {
-    try {
-        const response = await fetch(API_URL);
-        const menuItems = await response.json();
-        console.log("Menu items fetched:", menuItems);
-    } catch (error) {
-        console.error("Error fetching menu items:", error);
+
+// fetchMenuItems();
+function updateCartCount() {
+
+    let cartCount = 0;
+    cart.forEach(function (item) {
+        cartCount += item.quantity;
+    });
+
+    let cartCountElement =
+        document.getElementById("cart-count");
+
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
     }
 }
-
-function displayMenuItems(menuItems) {
-    // used menu-items instead of menu-container to match the id in the HTML
-    const allMenuItems = document.getElementById("menu-items");
-
-    menuItems.forEach(menuItem => {
-
-        const card = document.createElement("article");
-
-        card.innerHTML = `
-            <img src="${menuItem.image}" alt="${menuItem.name}">
-            <h3>${menuItem.name}</h3>
-            <p class="rating">
-                ${menuItem.rating}
-                <small>(${menuItem.reviews})</small>
-            </p>
-            <p class="price">₹${menuItem.price}</p>
-            <button>
-                <img src="assets/icons/cart-button.png" alt="Cart" width="14" height="14">
-                Add to Cart
-            </button>
-        `;
-
-        allMenuItems.appendChild(card);
-
-    });
-}
+updateCartCount();
 fetchMenuItems();
 
+document.getElementById("menu-items").addEventListener("click", function (event) {
 
+    if (event.target.closest(".update-menu-btn")) {
+
+        const button = event.target.closest(".update-menu-btn");
+        const card = button.closest("article");
+        console.log("card", card);
+        const menuId = card.dataset.id;
+        updateMenuId = menuId;
+        console.log("update", updateMenuId );
+        console.log("data", card.dataset);
+        console.log("Menu ID:", menuId);
+
+        const menuName = card.querySelector("h3").textContent;
+
+        const price = card.querySelector(".price").textContent
+            .replace("₹", "")
+            .trim();
+
+        const rating = card.querySelector(".rating").childNodes[0]
+            .textContent.trim();
+
+        const reviews = card.querySelector(".rating small").textContent
+            .replace("(", "")
+            .replace(")", "")
+            .trim();
+
+        const category = card.dataset.category;
+
+        const image = card.querySelector("img").src;
+
+
+        document.getElementById("menu-name").value = menuName;
+
+        document.getElementById("menu-price").value = price;
+
+        document.getElementById("menu-category").value = category;
+
+        document.getElementById("menu-rating").value = rating;
+
+        document.getElementById("menu-reviews").value = reviews;
+
+        document.getElementById("menu-image").value = image;
+
+
+        document.querySelector(".modal-header h2").textContent =
+            "Update Menu Item";
+
+        document.querySelector("#menu-form button[type='submit']").textContent =
+            "Update Menu Item";
+
+
+        menuModal.classList.add("show");
+
+    }
+
+});
 

@@ -348,7 +348,6 @@ function clearCart() {
 function updateCartCount() {
 
     let cartCount = 0;
-
     cart.forEach(function (item) {
         cartCount += item.quantity;
     });

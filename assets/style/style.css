@@ -4354,6 +4354,38 @@ body.dark-theme #cart-actions a {
     border-color: #e53935;
 }
 
+#menu-items article {
+    position: relative;
+}
+
+#menu-items article .menu-actions {
+    position: absolute;
+    right: 20px;
+    bottom: 68px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+#menu-items article .menu-actions button {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+}
+#menu-items article .menu-actions button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+#menu-items article .menu-actions button:hover {
+    background: transparent;
+}
 
 
 
