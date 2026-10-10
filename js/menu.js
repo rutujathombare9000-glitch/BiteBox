@@ -163,9 +163,7 @@ function removeFromCart(index) {
 
 let menuCards = document.querySelectorAll("#menu-items article");
 console.log("menuCards:", menuCards);
-
 let searchInput = document.getElementById("menu-search");
-
 let searchButton = document.getElementById("search-button");
 console.log("searchButton:", searchButton);
 console.log("searchInput:", searchInput);
@@ -314,15 +312,10 @@ loadTheme();
 const addMenuBtn = document.getElementById("add-menu-btn");
 const menuModal = document.getElementById("menu-modal");
 const cancelMenuForm = document.getElementById("cancel-menu-form");
- let updateMenuId = null;
-
-// addMenuBtn.addEventListener("click", function () {
-//     menuModal.classList.add("show");
-// });
+let updateMenuId = null;
 addMenuBtn.addEventListener("click", function () {
-    // updateMenuId = null;
+    updateMenuId = null;
     menuForm.reset();
-
     document.querySelector(".modal-header h2").textContent =
         "Add Menu Item";
     document.querySelector("#menu-form button[type='submit']").textContent =
@@ -338,7 +331,7 @@ const menuForm = document.getElementById("menu-form");
 
 const API_URL = "https://6ac3b144ae53bf25b80ed67d.mockapi.io/menu";
 
-
+// current POST submit listener ()
 menuForm.addEventListener("submit", async function (event) {
     event.preventDefault();
     const name = document.getElementById("menu-name").value;
@@ -373,8 +366,15 @@ menuForm.addEventListener("submit", async function (event) {
 
             const data = await response.json();
             console.log("Menu item added:", data);
+            const menuContainer = document.getElementById("menu-container");
+            const apiCards = menuContainer.querySelectorAll(".api-menu-card");
+            apiCards.forEach(card => {
+                card.remove();
+            });
 
-         displayMenuItems([data]);
+            fetchMenuItems();
+
+            displayMenuItems([data]);
         }
         menuModal.classList.remove("show");
         menuForm.reset();
@@ -385,6 +385,8 @@ menuForm.addEventListener("submit", async function (event) {
     }
 
 });
+
+
 
 
 // fetchMenuItems();
@@ -403,7 +405,7 @@ function updateCartCount() {
     }
 }
 updateCartCount();
-fetchMenuItems();
+// fetchMenuItems();
 
 document.getElementById("menu-items").addEventListener("click", function (event) {
 
@@ -414,7 +416,7 @@ document.getElementById("menu-items").addEventListener("click", function (event)
         console.log("card", card);
         const menuId = card.dataset.id;
         updateMenuId = menuId;
-        console.log("update", updateMenuId );
+        console.log("update", updateMenuId);
         console.log("data", card.dataset);
         console.log("Menu ID:", menuId);
 
@@ -460,6 +462,44 @@ document.getElementById("menu-items").addEventListener("click", function (event)
         menuModal.classList.add("show");
 
     }
+    if (event.target.closest(".delete-menu-btn")) {
 
+        const button =
+            event.target.closest(".delete-menu-btn");
+
+        const card =
+            button.closest("article");
+
+        const menuId =
+            card.dataset.id;
+
+        console.log("Delete Menu ID:", menuId);
+        deleteMenuItem(menuId,card);
+    }
 });
+async function updateMenuItem(menuId, menuItem) {
 
+    try {
+        const response = await fetch(API_URL + "/" + menuId, {
+
+            method: "PUT",  //put use for modify
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(menuItem)
+
+        });
+
+        const data = await response.json();
+        console.log("Menu item updated:", data);
+
+    } catch (error) {
+        console.error("Error updating menu item:", error);
+    }
+}
+async function deleteMenuItem(menuId, card) {
+    // const data = await response.json();
+    // console.log("Menu item deleted:", data);
+    card.remove();
+}
+console.log(deleteMenuItem);
